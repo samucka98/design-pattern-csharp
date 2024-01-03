@@ -37,15 +37,17 @@ namespace DesignPatternCsharp.Criacao
   {
     public ITransport RoadLogistic()
     {
-     return new Truck();
+      return new Truck();
     }
-	
-	   public ITransport WaterLogistic() {
-	      return new Ship();
-	   }
-	
-	   public ITransport AirLogistic() {
-       return new Airplane();}
+
+    public ITransport WaterLogistic()
+    {
+      return new Ship();
+    }
+
+    public ITransport AirLogistic()
+    {
+      return new Airplane();
     }
   }
 }
