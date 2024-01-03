@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using DesignPatternCsharp.Criacao;
+
+
+// Exemplo Factory Method
+var logisticsSystem = new LogisticsSystem();
+var transport = logisticsSystem.CreateTransport(ETransportType.Air);
+transport.Deliver();
