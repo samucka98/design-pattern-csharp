@@ -2,6 +2,7 @@
 
 
 // Exemplo Factory Method
-var logisticsSystem = new LogisticsSystem();
-var transport = logisticsSystem.CreateTransport(ETransportType.Air);
-transport.Deliver();
+var factoryLogistic = new LogisticsSystem();
+factoryLogistic.RoadLogistic().Deliver();
+factoryLogistic.AirLogistic().Deliver();
+factoryLogistic.WaterLogistic().Deliver();
