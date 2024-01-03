@@ -1,21 +1,14 @@
 namespace DesignPatternCsharp.Criacao
 {
 
-  public enum ETransportType
-  {
-    Air = 1,
-    Water = 2,
-    Land = 3
-  }
-
   // Interface dos produtos
   public interface ITransport
   {
     void Deliver();
   }
 
-  // Implementacao das classes concretas
-  public class AirTransport : ITransport
+  // Implementacao das classes concretas (Produtos)
+  public class Airplane : ITransport
   {
     public void Deliver()
     {
@@ -23,7 +16,7 @@ namespace DesignPatternCsharp.Criacao
     }
   }
 
-  public class WaterTransport : ITransport
+  public class Ship : ITransport
   {
     public void Deliver()
     {
@@ -31,7 +24,7 @@ namespace DesignPatternCsharp.Criacao
     }
   }
 
-  public class LandTransport : ITransport
+  public class Truck : ITransport
   {
     public void Deliver()
     {
@@ -42,19 +35,17 @@ namespace DesignPatternCsharp.Criacao
   // Factory Method (Criador)
   public class LogisticsSystem
   {
-    public ITransport CreateTransport(ETransportType transportType)
+    public ITransport RoadLogistic()
     {
-      switch (transportType)
-      {
-        case ETransportType.Air:
-          return new AirTransport();
-        case ETransportType.Water:
-          return new WaterTransport();
-        case ETransportType.Land:
-          return new LandTransport();
-        default:
-          throw new ArgumentException("Tipo de veiculo invalido");
-      }
+     return new Truck();
+    }
+	
+	   public ITransport WaterLogistic() {
+	      return new Ship();
+	   }
+	
+	   public ITransport AirLogistic() {
+       return new Airplane();}
     }
   }
 }
